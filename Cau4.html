@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Câu 4</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500px" height="500px" style="border: 1px solid #3d3d3d;"></canvas>
+    <script>
+        function Rectengle(x, y, width, height, color) {
+            this.x = x;
+            this.getX = function() {
+                return this.x;
+            };
+            this.setX = function(X) {
+                this.x = X;
+            };
+
+            this.y = y;
+            this.getY = function() {
+                return this.y;
+            };
+            this.setY = function(Y) {
+                this.y = Y;
+            };
+
+            this.width = width;
+            this.getWidth = function() {
+                return this.width;
+            };
+            this.setWidth = function(Width) {
+                this.width = Width;
+            };
+
+            this.height = height;
+            this.getHeigth = function() {
+                return this.height;
+            };
+            this.setHeight = function(Height) {
+                this.height = Height;
+            };
+
+            this.color = color;
+            this.getColor = function() {
+                return this.color;
+            };
+            this.setColor = function(Color) {
+                this.color = Color;
+            };
+
+            this.render = function() {
+                let rect = document.getElementById("myCanvas").getContext("2d");
+                rect.rect(this.getX(), this.getY(), this.getWidth(), this.getHeigth());
+                rect.fillStyle = this.getColor();
+                rect.fill();
+            }
+        }
+
+        let rect = new Rectengle(10,10,200,100,'#000000');
+        rect.render();
+    </script>
+</body>
+</html>
